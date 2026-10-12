@@ -1,0 +1,20 @@
+:root { --bg:#0f1115; --card:#181b22; --text:#e8eaf0; --muted:#8b92a5; --accent:#ffcc33; --line:#2a2f3a; }
+@media (prefers-color-scheme: light) {
+  :root { --bg:#f5f6f8; --card:#fff; --text:#15171c; --muted:#667085; --line:#dfe3ea; }
+}
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+main { max-width: 420px; margin: 0 auto; padding: 20px 16px 40px; text-align: center; }
+h1 { margin: 0 0 4px; font-size: 1.6rem; }
+.sub { margin: 0 0 14px; color: var(--muted); font-size: .92rem; }
+.stage canvas { width: 100%; max-width: 360px; height: auto; border-radius: 14px; border: 1px solid var(--line); touch-action: manipulation; }
+.mic { display:flex; align-items:center; gap:12px; margin-top:14px; }
+button, select { font: inherit; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--text); cursor: pointer; }
+.meter { position: relative; flex: 1; height: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+#level { height: 100%; width: 0; background: var(--accent); transition: width .06s linear; }
+#thresh { position: absolute; top: 0; bottom: 0; width: 2px; background: #ff4d5e; }
+.slider { display:flex; align-items:center; justify-content: space-between; gap: 12px; margin-top: 12px; color: var(--muted); font-size: .9rem; }
+.slider input { flex: 1; }
+.sharerow { margin-top: 12px; }
+#shareBtn { background: var(--accent); color: #15171c; border-color: var(--accent); font-weight: 700; width: 100%; }
+.note { margin-top: 16px; font-size: .82rem; color: var(--muted); }

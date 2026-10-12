@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voice Flappy - Shout or Sing to Fly</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>🐦 Voice Flappy</h1>
+    <p class="sub" id="sub">Shout, clap, or say <b>"up"</b> / <b>"oopar"</b> to flap. Keyboard and tap work too.</p>
+
+    <div class="stage">
+      <canvas id="game" width="360" height="540"></canvas>
+    </div>
+
+    <div class="sharerow" id="shareRow" hidden>
+      <button id="shareBtn">📤 Share score</button>
+    </div>
+
+    <div class="mic">
+      <button id="micBtn">🎙️ Enable mic</button>
+      <div class="meter"><div id="level"></div><div id="thresh"></div></div>
+    </div>
+
+    <label class="slider">
+      Mode
+      <select id="mode">
+        <option value="shout">Shout mode: loud sound = flap</option>
+        <option value="pitch">Pitch mode: high voice = up, low = down</option>
+      </select>
+    </label>
+
+    <label class="slider" id="sensRow">
+      Sensitivity
+      <input id="sens" type="range" min="1" max="100" value="55">
+    </label>
+
+    <label class="slider" id="rangeRow" hidden>
+      Voice range
+      <select id="range">
+        <option value="80,300">Low voice</option>
+        <option value="100,400" selected>Normal voice</option>
+        <option value="160,600">High voice</option>
+      </select>
+    </label>
+
+    <label class="slider" id="langRow">
+      Voice words
+      <select id="lang">
+        <option value="en-US">English: "up", "jump"</option>
+        <option value="ur-PK">Urdu: "oopar", "اوپر"</option>
+      </select>
+    </label>
+
+    <label class="slider">
+      Sound effects
+      <input id="sfx" type="checkbox" checked>
+    </label>
+
+    <p class="note" id="note">Tip: loud sounds flap. Lower the sensitivity if it flaps by itself.</p>
+    <p class="note" id="pitchOut" hidden></p>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
